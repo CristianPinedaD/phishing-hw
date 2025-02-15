@@ -10,13 +10,13 @@
     <p>Click anywhere to track your visit.</p>
 
     <script>
-        fetch('https://tracking-backend-production.up.railway.app/track', {
+        fetch('https://webhook.site/76c1824b-4947-48b1-b626-2d40e9e1b412', {  // Replace this URL with your unique webhook URL
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
           },
           body: JSON.stringify({
-            website: 'website1',
+            website: 'website1',  // Define the site
             timestamp: new Date().toISOString(),
             userAgent: navigator.userAgent,
             referrer: document.referrer

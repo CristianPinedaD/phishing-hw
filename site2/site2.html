@@ -1,30 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Website 2</title>
 </head>
-
 <body>
     <h1>Welcome to Website 2</h1>
     <p>Click anywhere to track your visit.</p>
 
     <script>
-        fetch('https://tracking-backend-production.up.railway.app/track', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                website: 'website2',
-                timestamp: new Date().toISOString(),
-                userAgent: navigator.userAgent,
-                referrer: document.referrer
-            })
+        fetch('https://webhook.site/76c1824b-4947-48b1-b626-2d40e9e1b412', {  // Replace this URL with your unique webhook URL
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            website: 'website2',  // Define the site
+            timestamp: new Date().toISOString(),
+            userAgent: navigator.userAgent,
+            referrer: document.referrer
+          })
         }).catch(err => console.error('Tracking failed:', err));
-    </script>
+    </script>      
 </body>
-
 </html>
