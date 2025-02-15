@@ -18,16 +18,13 @@
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                website: 'website2',  // Change from "site" to "website"
+                website: 'website2',
                 timestamp: new Date().toISOString(),
                 userAgent: navigator.userAgent,
                 referrer: document.referrer
             })
-        })
-            .catch(err => console.error('Tracking failed:', err));
-
+        }).catch(err => console.error('Tracking failed:', err));
     </script>
-
 </body>
 
 </html>
