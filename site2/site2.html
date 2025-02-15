@@ -10,19 +10,19 @@
     <p>Click anywhere to track your visit.</p>
 
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            document.body.addEventListener("click", () => {
-                fetch('https://tracking-backend-production.up.railway.app/', { // Replace with your Railway backend URL
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        website: 'Website 2',
-                        timestamp: new Date().toISOString(),
-                        userAgent: navigator.userAgent
-                    })
-                });
-            });
-        });
-    </script>
+        fetch('https://tracking-backend-production.up.railway.app/track', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            site: 'website1',  // Change to 'website2' for the second site
+            timestamp: new Date().toISOString(),
+            userAgent: navigator.userAgent,
+            referrer: document.referrer
+          })
+        }).catch(err => console.error('Tracking failed:', err));
+      </script>      
+      
 </body>
 </html>
